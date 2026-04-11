@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 app = Flask(__name__)
 
 # ── Load model, tokenizer, label encoder ──
-model = tf.keras.models.load_model('career_model.h5')
+model = tf.keras.models.load_model('career_model.keras')
 with open('tokenizer.pkl', 'rb') as f:
     tokenizer = pickle.load(f)
 with open('label_encoder.pkl', 'rb') as f:
