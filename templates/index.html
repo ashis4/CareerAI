@@ -1,708 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>CareerAI — Find Your Path</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/static/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/style.css"/>
 </head>
 <body>
 
-  <!-- ── NAVBAR (centered menu) ── -->
-  <nav>
-    <div class="nav-logo">Career<span>AI</span></div>
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">Career<span>AI</span></div>
+  <div class="nav-menu">
+    <a href="#hero" class="active">Home</a>
+    <a href="#features">Features</a>
+    <a href="#how">How It Works</a>
+    <a href="#built">How It's Built</a>
+    <a href="#footer">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-ghost">Login</button>
+    <button class="btn-primary">Sign Up</button>
+  </div>
+</nav>
 
-    <div class="nav-menu">
-      <a href="#" class="active">Career Path</a>
-      <a href="#features">Features</a>
-      <a href="#how">How It Works</a>
-      <a href="#footer">Contact</a>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="badge-dot"></span>AI-Powered Career Intelligence</div>
+    <h1>Find Your <span class="gradient-text">Perfect Career Path</span><br/>with Deep Learning</h1>
+    <p>Enter your skills and let our NLP deep learning model map your ideal career — with real roadmaps, skill gaps, salary insights, and top job roles.</p>
+    <div class="search-wrap">
+      <input id="skill-input" type="text" placeholder="Type your skills — Python, ML, HTML, React, SQL..."/>
+      <button class="predict-btn" id="predict-btn">✦ Predict Career</button>
     </div>
-
-    <div class="nav-actions">
-      <button class="btn-ghost">Login</button>
-      <button class="btn-primary">Sign Up</button>
+    <p class="hero-hint">
+      Try:
+      <span onclick="fillSkill('machine learning, python, pandas, numpy')">Machine Learning</span> ·
+      <span onclick="fillSkill('html, css, javascript, react')">Web Dev</span> ·
+      <span onclick="fillSkill('sql, excel, tableau, power bi')">Data Science</span> ·
+      <span onclick="fillSkill('figma, wireframe, prototype, ui')">UI/UX</span>
+    </p>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Careers Predicted</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><div class="stat-num">16+</div><div class="stat-label">Career Paths</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Accuracy Rate</div></div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- ── HERO ── -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        AI-Powered Career Intelligence
-      </div>
-      <h1>
-        Find Your <span class="gradient-text">Perfect Career Path</span><br/>with AI
-      </h1>
-      <p>Enter your skills and let our deep learning model map your ideal career — with real roadmaps, skill gaps, salary insights, and top job roles.</p>
+<!-- FEATURES -->
+<section class="section" id="features">
+  <p class="section-label">Why CareerAI</p>
+  <h2 class="section-title">Everything you need to<br/>navigate your career</h2>
+  <p class="section-sub">Not just predictions — full roadmaps, skill gaps, and real opportunities tailored to you.</p>
+  <div class="features-grid">
+    <div class="feature-card"><div class="feature-icon">🧠</div><h3>AI-Powered Matching</h3><p>Our deep learning NLP model analyzes real career trajectories to match your skills to the most relevant paths.</p></div>
+    <div class="feature-card"><div class="feature-icon">🗺️</div><h3>Personalized Roadmaps</h3><p>Get a step-by-step learning roadmap with resources, certifications, and milestones for your goal role.</p></div>
+    <div class="feature-card"><div class="feature-icon">📊</div><h3>Salary Insights</h3><p>Real salary ranges for each predicted career, broken down by experience level across India.</p></div>
+    <div class="feature-card"><div class="feature-icon">🎯</div><h3>Skill Gap Analysis</h3><p>Instantly see what skills you're missing and which ones to prioritize to reach your target role faster.</p></div>
+    <div class="feature-card"><div class="feature-icon">⚡</div><h3>Instant Results</h3><p>No lengthy forms. Type your skills and get career predictions in under 3 seconds.</p></div>
+    <div class="feature-card"><div class="feature-icon">🔄</div><h3>Career Pivots</h3><p>Already working? Discover lateral moves that leverage your existing experience.</p></div>
+  </div>
+</section>
 
-      <div class="search-wrap">
-        <input id="skill-input" type="text" placeholder="Type your skills — Python, ML, HTML, React, SQL..." />
-        <button class="predict-btn" id="predict-btn">✦ Predict Career</button>
-      </div>
+<div class="section-divider"></div>
 
-      <p class="hero-hint">
-        Try:
-        <span onclick="fillSkill('machine learning, python, pandas, numpy')">Machine Learning</span> ·
-        <span onclick="fillSkill('html, css, javascript, react')">Web Dev</span> ·
-        <span onclick="fillSkill('sql, excel, tableau, power bi')">Data Science</span> ·
-        <span onclick="fillSkill('figma, wireframe, prototype, ui')">UI/UX</span>
-      </p>
-
-      <div class="stats-row">
-        <div class="stat">
-          <div class="stat-num">500+</div>
-          <div class="stat-label">Careers Predicted</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <div class="stat-num">16+</div>
-          <div class="stat-label">Career Paths</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <div class="stat-num">98%</div>
-          <div class="stat-label">Accuracy Rate</div>
-        </div>
-      </div>
+<!-- HOW IT WORKS -->
+<div class="how-section" id="how">
+  <div class="how-inner">
+    <p class="section-label">The Process</p>
+    <h2 class="section-title">How it works</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-num">01</div><h4>Enter Your Skills</h4><p>Type in your current skills, technologies, or interests.</p></div>
+      <div class="step"><div class="step-num">02</div><h4>AI Analyzes</h4><p>Our NLP deep learning model cross-references your profile with real career datasets.</p></div>
+      <div class="step"><div class="step-num">03</div><h4>Get Predictions</h4><p>Receive top-3 ranked career paths with match scores, salary ranges, and growth potential.</p></div>
+      <div class="step"><div class="step-num">04</div><h4>Follow Roadmap</h4><p>Explore your personalized roadmap and start working toward your ideal career.</p></div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- ── FEATURES ── -->
-  <section class="section" id="features">
-    <p class="section-label">Why CareerAI</p>
-    <h2 class="section-title">Everything you need to<br/>navigate your career</h2>
-    <p class="section-sub">Not just predictions — full roadmaps, skill gaps, and real opportunities tailored to you.</p>
+<div class="section-divider"></div>
 
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🧠</div>
-        <h3>AI-Powered Matching</h3>
-        <p>Our deep learning NLP model analyzes real career trajectories to match your skills to the most relevant paths.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🗺️</div>
-        <h3>Personalized Roadmaps</h3>
-        <p>Get a step-by-step learning roadmap with resources, certifications, and milestones for your goal role.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>Salary Insights</h3>
-        <p>Real salary ranges and growth trends for each predicted career, broken down by experience level in India.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <h3>Skill Gap Analysis</h3>
-        <p>Instantly see what skills you're missing and which ones to prioritize to reach your target role faster.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>Instant Results</h3>
-        <p>No lengthy forms or surveys. Type your skills and get your career predictions in under 3 seconds.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔄</div>
-        <h3>Career Pivots</h3>
-        <p>Already working? Discover lateral moves and pivot opportunities that leverage your existing experience.</p>
-      </div>
+<!-- HOW IT'S BUILT -->
+<section class="section built-section" id="built">
+  <p class="section-label">Under The Hood</p>
+  <h2 class="section-title">How CareerAI is built</h2>
+  <p class="section-sub">A full deep learning + NLP pipeline — from raw dataset to live predictions in the browser.</p>
+
+  <div class="pipeline">
+    <div class="pipeline-node">
+      <div class="pnode-icon">📁</div>
+      <div class="pnode-tag">Step 1</div>
+      <div class="pnode-title">Dataset</div>
+      <div class="pnode-desc">Skills → Career label pairs collected and cleaned. Each row has skill keywords mapped to a specific career role.</div>
+      <div class="pnode-chips"><span class="pchip">CSV</span><span class="pchip">16 Career Labels</span><span class="pchip">Skill Keywords</span></div>
     </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ── HOW IT WORKS ── -->
-  <div class="how-section" id="how">
-    <div class="how-inner">
-      <p class="section-label">The Process</p>
-      <h2 class="section-title">How it works</h2>
-      <div class="steps-grid">
-        <div class="step">
-          <div class="step-num">01</div>
-          <h4>Enter Your Skills</h4>
-          <p>Type in your current skills, technologies, or interests into the search bar.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <h4>AI Analyzes</h4>
-          <p>Our NLP deep learning model cross-references your profile with real career datasets.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <h4>Get Predictions</h4>
-          <p>Receive top-3 ranked career paths with match scores, salary ranges, and growth potential.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">04</div>
-          <h4>Follow Your Roadmap</h4>
-          <p>Explore your personalized roadmap and start working toward your ideal career today.</p>
-        </div>
-      </div>
+    <div class="pipeline-arrow">→</div>
+    <div class="pipeline-node">
+      <div class="pnode-icon">🔤</div>
+      <div class="pnode-tag">Step 2</div>
+      <div class="pnode-title">NLP Preprocessing</div>
+      <div class="pnode-desc">Raw skill text is tokenized using Keras Tokenizer, converted to integer sequences, then padded to uniform length.</div>
+      <div class="pnode-chips"><span class="pchip pchip-purple">Keras Tokenizer</span><span class="pchip pchip-purple">Padding</span><span class="pchip pchip-purple">Sequences</span></div>
+    </div>
+    <div class="pipeline-arrow">→</div>
+    <div class="pipeline-node pnode-highlight">
+      <div class="pnode-icon">🧠</div>
+      <div class="pnode-tag">Step 3 — Core</div>
+      <div class="pnode-title">Deep Learning Model</div>
+      <div class="pnode-desc">Keras Sequential neural network: Embedding → GlobalAveragePooling → Dense layers trained on skill-to-career classification.</div>
+      <div class="pnode-chips"><span class="pchip pchip-gold">Embedding</span><span class="pchip pchip-gold">GlobalAvgPool</span><span class="pchip pchip-gold">Dense+Softmax</span></div>
+    </div>
+    <div class="pipeline-arrow">→</div>
+    <div class="pipeline-node">
+      <div class="pnode-icon">⚡</div>
+      <div class="pnode-tag">Step 4</div>
+      <div class="pnode-title">Keyword Boost</div>
+      <div class="pnode-desc">Hybrid layer on top of the neural net — detected domain keywords boost confidence scores for their matching career.</div>
+      <div class="pnode-chips"><span class="pchip">Hybrid Model</span><span class="pchip">Rule-based Boost</span><span class="pchip">Score Adjust</span></div>
+    </div>
+    <div class="pipeline-arrow">→</div>
+    <div class="pipeline-node">
+      <div class="pnode-icon">🚀</div>
+      <div class="pnode-tag">Step 5</div>
+      <div class="pnode-title">Flask API</div>
+      <div class="pnode-desc">Trained model loaded into Flask. A POST /predict endpoint tokenizes input, runs inference, returns top-3 careers + roadmaps as JSON.</div>
+      <div class="pnode-chips"><span class="pchip pchip-green">Flask</span><span class="pchip pchip-green">REST API</span><span class="pchip pchip-green">JSON</span></div>
+    </div>
+    <div class="pipeline-arrow">→</div>
+    <div class="pipeline-node">
+      <div class="pnode-icon">🌐</div>
+      <div class="pnode-tag">Step 6</div>
+      <div class="pnode-title">Frontend</div>
+      <div class="pnode-desc">HTML/CSS/JS calls the API and renders top-3 career predictions with confidence bars, roadmaps, skill gap, job roles, and salary.</div>
+      <div class="pnode-chips"><span class="pchip">HTML/CSS/JS</span><span class="pchip">Render Deploy</span><span class="pchip">Top-3 Results</span></div>
     </div>
   </div>
 
-  <!-- ── CTA BANNER ── -->
-  <div class="cta-section">
-    <h2>Ready to discover your<br/>ideal career path?</h2>
-    <p>Join 50,000+ students and professionals who've already found clarity with CareerAI.</p>
-    <button class="cta-btn" onclick="document.getElementById('skill-input').focus(); window.scrollTo({top:0,behavior:'smooth'})">✦ Start Predicting — It's Free</button>
-  </div>
-
-  <!-- ── FOOTER ── -->
-  <footer id="footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <span class="nav-logo">Career<span>AI</span></span>
-          <p>AI-powered career path predictions to help students and professionals find their ideal direction — faster and smarter.</p>
-          <div class="footer-social">
-            <a href="https://github.com/ashis4" target="_blank" class="social-btn" title="GitHub">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/ashish-gaikar-b4713a289/" target="_blank" class="social-btn" title="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="https://x.com/AshishGaik41291" target="_blank" class="social-btn" title="Twitter / X">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.629L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/ashish_gaikar04" target="_blank" class="social-btn" title="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h5>Product</h5>
-          <ul>
-            <li><a href="#">Career Predictor</a></li>
-            <li><a href="#">Skill Assessment</a></li>
-            <li><a href="#">Roadmap Builder</a></li>
-            <li><a href="#">Salary Insights</a></li>
-            <li><a href="#">API Access</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Resources</h5>
-          <ul>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Career Guides</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Changelog</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="mailto:ashishgaikar2006@gmail.com">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2025 CareerAI. Built with ♥ by Ashish Gaikar.</span>
-        <span>Made in <a href="#">India 🇮🇳</a></span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ══════════════════════════
-       PREDICTION RESULT MODAL
-  ══════════════════════════ -->
-  <div id="result-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:999; align-items:flex-start; justify-content:center; padding:30px 20px; overflow-y:auto;">
-    <div class="modal-box">
-      <div class="modal-bar"></div>
-      <div class="modal-inner">
-
-        <button class="modal-close" onclick="closeModal()">✕</button>
-
-        <!-- ── STEP 1: Top 3 Career Cards ── -->
-        <div id="step-select">
-          <p class="modal-eyebrow">Your AI Prediction</p>
-          <h2 class="modal-title">Select a career to explore your full roadmap</h2>
-          <div id="result-top3"></div>
-        </div>
-
-        <!-- ── STEP 2: Detailed View with Tabs ── -->
-        <div id="step-roadmap">
-          <button class="roadmap-back" onclick="showStep1()">← Back to results</button>
-
-          <div class="roadmap-header">
-            <div>
-              <div class="roadmap-role-label">Your career path</div>
-              <div class="roadmap-role-name" id="result-career">—</div>
-            </div>
-          </div>
-
-          <!-- Tabs -->
-          <div class="modal-tabs">
-            <button class="modal-tab active" onclick="switchTab('roadmap', this)">🗺 Roadmap</button>
-            <button class="modal-tab" onclick="switchTab('skills', this)">🎯 Skills Gap</button>
-            <button class="modal-tab" onclick="switchTab('jobs', this)">💼 Job Roles</button>
-            <button class="modal-tab" onclick="switchTab('salary', this)">💰 Salary</button>
-          </div>
-
-          <!-- Roadmap tab -->
-          <div id="tab-roadmap" class="tab-panel active">
-            <div class="roadmap-steps" id="roadmap-steps"></div>
-          </div>
-
-          <!-- Skills Gap tab -->
-          <div id="tab-skills" class="tab-panel">
-            <div class="skills-gap-wrap">
-              <p class="skills-section-label">✅ Skills you have</p>
-              <div class="skill-chips" id="skills-have"></div>
-              <p class="skills-section-label" style="margin-top:20px">❌ Skills to learn</p>
-              <div class="skill-chips" id="skills-miss"></div>
-            </div>
-          </div>
-
-          <!-- Jobs tab -->
-          <div id="tab-jobs" class="tab-panel">
-            <div class="jobs-list" id="jobs-list"></div>
-          </div>
-
-          <!-- Salary tab -->
-          <div id="tab-salary" class="tab-panel">
-            <div class="salary-grid" id="salary-grid"></div>
-          </div>
-
-          <button class="modal-close-btn" onclick="closeModal()">Close ✦</button>
-        </div>
-
-      </div>
+  <!-- Tech Stack -->
+  <div class="tech-stack">
+    <div class="tech-stack-title">Tech Stack</div>
+    <div class="tech-row">
+      <div class="tech-pill"><span class="tech-dot" style="background:#3776ab"></span>Python</div>
+      <div class="tech-pill"><span class="tech-dot" style="background:#ff6f00"></span>TensorFlow / Keras</div>
+      <div class="tech-pill"><span class="tech-dot" style="background:#a78bfa"></span>NLP · Tokenizer</div>
+      <div class="tech-pill"><span class="tech-dot" style="background:#e5b84a"></span>Jupyter Notebook</div>
+      <div class="tech-pill"><span class="tech-dot" style="background:#10b981"></span>Flask</div>
+      <div class="tech-pill"><span class="tech-dot" style="background:#e8eaf6"></span>HTML / CSS / JS</div>
+      <div class="tech-pill"><span class="tech-dot" style="background:#38bdf8"></span>Render</div>
     </div>
   </div>
 
-  <script src="/static/script.js"></script>
+  <!-- Model Architecture -->
+  <div class="arch-card">
+    <div class="arch-left">
+      <div class="arch-label">Model Architecture</div>
+      <div class="arch-title">Keras Sequential Neural Network</div>
+      <div class="arch-sub">Trained on skill-to-career dataset · Softmax output over 16 career classes</div>
+      <div class="arch-layers">
+        <div class="arch-layer">
+          <div class="layer-num">1</div>
+          <div><div class="layer-name">Embedding Layer</div><div class="layer-desc">Converts token IDs to dense vectors — learns semantic meaning of each skill word during training.</div></div>
+        </div>
+        <div class="arch-layer">
+          <div class="layer-num">2</div>
+          <div><div class="layer-name">GlobalAveragePooling1D</div><div class="layer-desc">Aggregates all skill token embeddings into a single fixed-size feature vector for the input.</div></div>
+        </div>
+        <div class="arch-layer">
+          <div class="layer-num">3</div>
+          <div><div class="layer-name">Dense Layer (ReLU)</div><div class="layer-desc">Fully connected hidden layer that extracts high-level patterns and skill-role relationships.</div></div>
+        </div>
+        <div class="arch-layer">
+          <div class="layer-num">4</div>
+          <div><div class="layer-name">Dense Layer (Softmax)</div><div class="layer-desc">Output layer producing a probability distribution across all 16 career class labels.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="arch-right">
+      <div class="arch-visual">
+        <div class="av-layer av-input">Input Skills<span>Tokenized + Padded</span></div>
+        <div class="av-arrow">↓</div>
+        <div class="av-layer av-embed">Embedding Layer<span>Semantic Vectors</span></div>
+        <div class="av-arrow">↓</div>
+        <div class="av-layer av-pool">GlobalAvgPool1D<span>Fixed Feature Vector</span></div>
+        <div class="av-arrow">↓</div>
+        <div class="av-layer av-dense">Dense + ReLU<span>Hidden Features</span></div>
+        <div class="av-arrow">↓</div>
+        <div class="av-layer av-output">Softmax Output<span>16 Career Probabilities</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    /* ── Inline data for skills gap, jobs, salary ── */
-    const CAREER_DATA = {
-      "Data Scientist": {
-        skills: ["python","machine learning","statistics","pandas","numpy","scikit-learn","deep learning","sql","matplotlib","tensorflow"],
-        jobs: [
-          {icon:"🤖", name:"Data Scientist", meta:"Product / Tech Company", tags:["Python","ML","SQL"]},
-          {icon:"📈", name:"ML Research Intern", meta:"AI Lab / Research", tags:["Research","PyTorch"]},
-          {icon:"⚙️", name:"Analytics Engineer", meta:"Startup / SaaS", tags:["SQL","Python","dbt"]},
-          {icon:"📊", name:"Quantitative Analyst", meta:"Finance / Fintech", tags:["Stats","Python"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹6–10", pct:30, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹12–20", pct:60, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹22–35", pct:85, color:"#e8a838"},
-          {level:"Lead / Principal", amount:"₹35–60", pct:100, color:"#10b981"}
-        ]
-      },
-      "Data Analyst": {
-        skills: ["sql","excel","power bi","tableau","python","data cleaning","statistics","pivot tables","reporting","dashboard"],
-        jobs: [
-          {icon:"📊", name:"Data Analyst", meta:"E-commerce / Retail", tags:["SQL","Excel","Tableau"]},
-          {icon:"📉", name:"BI Analyst", meta:"Enterprise", tags:["Power BI","SQL"]},
-          {icon:"🚚", name:"Operations Analyst", meta:"Logistics", tags:["Excel","Reporting"]},
-          {icon:"💡", name:"Product Analyst", meta:"SaaS Product Co.", tags:["SQL","Python"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹3–6", pct:25, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹7–12", pct:55, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹13–20", pct:80, color:"#e8a838"},
-          {level:"Lead", amount:"₹20–30", pct:100, color:"#10b981"}
-        ]
-      },
-      "AI Engineer": {
-        skills: ["python","deep learning","nlp","tensorflow","pytorch","machine learning","transformers","api","deployment","docker"],
-        jobs: [
-          {icon:"🤖", name:"AI Engineer", meta:"Tech / Product Company", tags:["Python","PyTorch","NLP"]},
-          {icon:"💬", name:"NLP Engineer", meta:"Fintech / Banking", tags:["Transformers","BERT"]},
-          {icon:"👁", name:"Computer Vision Eng.", meta:"Healthcare AI", tags:["CV","OpenCV"]},
-          {icon:"⚡", name:"LLM Developer", meta:"AI Startup", tags:["LLMs","APIs"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹8–14", pct:35, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹16–28", pct:65, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹30–50", pct:90, color:"#e8a838"},
-          {level:"Lead / Principal", amount:"₹50–90", pct:100, color:"#10b981"}
-        ]
-      },
-      "Machine Learning Engineer": {
-        skills: ["python","ml pipeline","deployment","mlflow","scikit-learn","docker","kubernetes","feature engineering","model evaluation","api"],
-        jobs: [
-          {icon:"🧠", name:"ML Engineer", meta:"Tech / Unicorn", tags:["Python","MLflow","Docker"]},
-          {icon:"⚙️", name:"MLOps Engineer", meta:"Enterprise", tags:["Kubernetes","CI/CD"]},
-          {icon:"📦", name:"AI Platform Engineer", meta:"Cloud Company", tags:["AWS","Python"]},
-          {icon:"🔬", name:"Research Engineer", meta:"AI Lab", tags:["Research","PyTorch"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹8–15", pct:35, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹18–32", pct:68, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹35–55", pct:90, color:"#e8a838"},
-          {level:"Lead / Principal", amount:"₹55–100", pct:100, color:"#10b981"}
-        ]
-      },
-      "Software Engineer": {
-        skills: ["dsa","algorithms","oop","java","python","c++","git","system design","os","dbms"],
-        jobs: [
-          {icon:"💻", name:"Software Engineer", meta:"MNC / FAANG", tags:["DSA","System Design"]},
-          {icon:"🖥", name:"Backend Engineer", meta:"Startup", tags:["Node.js","Python"]},
-          {icon:"🌐", name:"Full Stack Developer", meta:"Product Company", tags:["React","Node"]},
-          {icon:"☕", name:"SDE II", meta:"Enterprise", tags:["Java","Spring"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹5–10", pct:28, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹12–22", pct:58, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹25–45", pct:85, color:"#e8a838"},
-          {level:"Lead / Principal", amount:"₹45–80", pct:100, color:"#10b981"}
-        ]
-      },
-      "Java Developer": {
-        skills: ["java","spring","hibernate","jdbc","maven","gradle","oop","rest api","microservices","junit"],
-        jobs: [
-          {icon:"☕", name:"Java Developer", meta:"Enterprise / MNC", tags:["Java","Spring Boot"]},
-          {icon:"🔧", name:"Backend Developer", meta:"Product Company", tags:["Spring","REST"]},
-          {icon:"⚙️", name:"Microservices Eng.", meta:"Fintech", tags:["Docker","Kubernetes"]},
-          {icon:"🏗", name:"Software Architect", meta:"Enterprise", tags:["System Design","Java"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹4–8", pct:28, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹10–18", pct:55, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹20–35", pct:82, color:"#e8a838"},
-          {level:"Lead / Architect", amount:"₹35–60", pct:100, color:"#10b981"}
-        ]
-      },
-      "Frontend Developer": {
-        skills: ["html","css","javascript","react","typescript","figma","responsive design","api","git","redux"],
-        jobs: [
-          {icon:"🎨", name:"Frontend Developer", meta:"Product Startup", tags:["React","TypeScript"]},
-          {icon:"🖌", name:"UI Developer", meta:"Agency", tags:["HTML","CSS","JS"]},
-          {icon:"⚛️", name:"React Developer", meta:"SaaS Company", tags:["React","Redux"]},
-          {icon:"🛍", name:"Web Developer", meta:"E-commerce", tags:["Next.js","Tailwind"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹3–6", pct:25, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹7–14", pct:55, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹15–25", pct:82, color:"#e8a838"},
-          {level:"Lead", amount:"₹25–40", pct:100, color:"#10b981"}
-        ]
-      },
-      "Backend Developer": {
-        skills: ["node.js","django","api","database","sql","python","rest","authentication","docker","postgresql"],
-        jobs: [
-          {icon:"🖥", name:"Backend Developer", meta:"Startup / SaaS", tags:["Node.js","Python"]},
-          {icon:"🔌", name:"API Developer", meta:"Platform Company", tags:["REST","GraphQL"]},
-          {icon:"🏗", name:"Systems Engineer", meta:"Enterprise", tags:["Microservices","Docker"]},
-          {icon:"🛡", name:"Server-side Engineer", meta:"Security Firm", tags:["Auth","Security"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹4–8", pct:28, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹10–18", pct:55, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹20–35", pct:82, color:"#e8a838"},
-          {level:"Lead / Architect", amount:"₹35–55", pct:100, color:"#10b981"}
-        ]
-      },
-      "Web Developer": {
-        skills: ["html","css","javascript","react","node","mern","full stack","web app","sql","git"],
-        jobs: [
-          {icon:"🌐", name:"Full Stack Developer", meta:"Startup", tags:["MERN","SQL"]},
-          {icon:"🎨", name:"Web Developer", meta:"Agency", tags:["HTML","CSS","JS"]},
-          {icon:"📱", name:"UI/UX Developer", meta:"Product Co.", tags:["React","Figma"]},
-          {icon:"🛒", name:"E-commerce Developer", meta:"Retail", tags:["Next.js","Shopify"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹3–7", pct:27, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹8–15", pct:55, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹16–28", pct:80, color:"#e8a838"},
-          {level:"Lead", amount:"₹28–45", pct:100, color:"#10b981"}
-        ]
-      },
-      "UI/UX Designer": {
-        skills: ["figma","wireframe","prototype","user research","adobe xd","sketch","design system","usability testing","typography","color theory"],
-        jobs: [
-          {icon:"🎨", name:"UI/UX Designer", meta:"Product Company", tags:["Figma","Prototyping"]},
-          {icon:"🖌", name:"Product Designer", meta:"Startup", tags:["User Research","Design"]},
-          {icon:"📱", name:"App Designer", meta:"Mobile Studio", tags:["Mobile","Figma"]},
-          {icon:"🔍", name:"UX Researcher", meta:"Large Enterprise", tags:["Research","Testing"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹3–6", pct:25, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹7–14", pct:55, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹15–25", pct:82, color:"#e8a838"},
-          {level:"Lead / Principal", amount:"₹25–40", pct:100, color:"#10b981"}
-        ]
-      },
-      "Cloud Engineer": {
-        skills: ["aws","docker","kubernetes","terraform","linux","networking","devops","ci/cd","azure","google cloud"],
-        jobs: [
-          {icon:"☁️", name:"Cloud Engineer", meta:"Tech / FAANG", tags:["AWS","Terraform"]},
-          {icon:"🔧", name:"DevOps Engineer", meta:"Enterprise", tags:["CI/CD","Docker"]},
-          {icon:"🏗", name:"Site Reliability Eng.", meta:"Unicorn", tags:["Kubernetes","SRE"]},
-          {icon:"🛡", name:"Cloud Security Eng.", meta:"Security Company", tags:["IAM","Security"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹6–12", pct:30, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹14–24", pct:60, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹26–45", pct:88, color:"#e8a838"},
-          {level:"Lead / Architect", amount:"₹45–80", pct:100, color:"#10b981"}
-        ]
-      },
-      "Cybersecurity Analyst": {
-        skills: ["security","hacking","wireshark","nmap","networking","linux","python","penetration testing","vulnerability assessment","firewalls"],
-        jobs: [
-          {icon:"🛡", name:"Cybersecurity Analyst", meta:"Enterprise / Govt", tags:["Security","Networking"]},
-          {icon:"🔐", name:"Penetration Tester", meta:"Security Firm", tags:["Hacking","Python"]},
-          {icon:"🕵️", name:"Security Researcher", meta:"Tech Company", tags:["Research","CVE"]},
-          {icon:"🚨", name:"SOC Analyst", meta:"MNC / Bank", tags:["SIEM","Incident Response"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹4–8", pct:28, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹10–18", pct:56, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹20–35", pct:82, color:"#e8a838"},
-          {level:"Lead / CISO", amount:"₹35–70", pct:100, color:"#10b981"}
-        ]
-      },
-      "Business Analyst": {
-        skills: ["business analysis","requirements","sql","excel","power bi","stakeholder management","process mapping","agile","jira","documentation"],
-        jobs: [
-          {icon:"📈", name:"Business Analyst", meta:"Consulting / IT", tags:["Requirements","SQL"]},
-          {icon:"🔍", name:"Product Analyst", meta:"SaaS Product Co.", tags:["Agile","Jira"]},
-          {icon:"🏢", name:"Systems Analyst", meta:"Enterprise", tags:["Process Mapping"]},
-          {icon:"📊", name:"Data-Driven BA", meta:"Analytics Firm", tags:["SQL","Power BI"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹4–7", pct:27, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹8–14", pct:52, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹15–25", pct:78, color:"#e8a838"},
-          {level:"Lead / Manager", amount:"₹25–40", pct:100, color:"#10b981"}
-        ]
-      },
-      "Financial Analyst": {
-        skills: ["finance","investment","valuation","excel","financial modeling","dcf","accounting","bloomberg","sql","reporting"],
-        jobs: [
-          {icon:"💰", name:"Financial Analyst", meta:"Bank / NBFC", tags:["Excel","Valuation"]},
-          {icon:"📈", name:"Investment Analyst", meta:"PE / VC Firm", tags:["DCF","Research"]},
-          {icon:"🏦", name:"Credit Analyst", meta:"Banking", tags:["Risk","Finance"]},
-          {icon:"📉", name:"Equity Research Analyst", meta:"Brokerage", tags:["Bloomberg","Modeling"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹4–8", pct:28, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹10–18", pct:55, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹20–36", pct:82, color:"#e8a838"},
-          {level:"VP / Director", amount:"₹36–70", pct:100, color:"#10b981"}
-        ]
-      },
-      "Digital Marketing Specialist": {
-        skills: ["seo","marketing","ads","google analytics","social media","content marketing","email marketing","ppc","facebook ads","copywriting"],
-        jobs: [
-          {icon:"📢", name:"Digital Marketing Mgr", meta:"Brand / Agency", tags:["SEO","Ads"]},
-          {icon:"🔍", name:"SEO Specialist", meta:"Agency", tags:["SEO","Content"]},
-          {icon:"📱", name:"Social Media Manager", meta:"Startup", tags:["Instagram","Strategy"]},
-          {icon:"📧", name:"Performance Marketer", meta:"E-commerce", tags:["PPC","Email"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹3–5", pct:23, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹6–12", pct:50, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹13–22", pct:78, color:"#e8a838"},
-          {level:"Lead / Head", amount:"₹22–40", pct:100, color:"#10b981"}
-        ]
-      },
-      "Android Developer": {
-        skills: ["android","kotlin","java","android studio","xml","firebase","rest api","mvvm","gradle","jetpack"],
-        jobs: [
-          {icon:"📱", name:"Android Developer", meta:"Mobile Studio", tags:["Kotlin","Firebase"]},
-          {icon:"🛍", name:"App Developer", meta:"E-commerce", tags:["Android","Payments"]},
-          {icon:"🏗", name:"Mobile Engineer", meta:"Unicorn", tags:["MVVM","Jetpack"]},
-          {icon:"🎮", name:"Game Developer", meta:"Gaming Company", tags:["Unity","Android"]}
-        ],
-        salary: [
-          {level:"Junior (0–2 yrs)", amount:"₹3–7", pct:27, color:"#6c63ff"},
-          {level:"Mid-level (2–5 yrs)", amount:"₹8–16", pct:55, color:"#a78bfa"},
-          {level:"Senior (5–8 yrs)", amount:"₹18–30", pct:82, color:"#e8a838"},
-          {level:"Lead / Architect", amount:"₹30–50", pct:100, color:"#10b981"}
-        ]
-      }
-    };
+<div class="section-divider"></div>
 
-    /* ── Helpers ── */
-    function fillSkill(val) {
-      document.getElementById('skill-input').value = val;
-      document.getElementById('skill-input').focus();
-    }
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Ready to discover your<br/>ideal career path?</h2>
+  <p>Join 50,000+ students and professionals who've found clarity with CareerAI.</p>
+  <button class="cta-btn" onclick="document.getElementById('skill-input').focus();window.scrollTo({top:0,behavior:'smooth'})">✦ Start Predicting — It's Free</button>
+</div>
 
-    function closeModal() {
-      document.getElementById('result-modal').style.display = 'none';
-    }
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav-logo">Career<span>AI</span></span>
+        <p>AI-powered career path predictions to help students and professionals find their ideal direction — faster and smarter.</p>
+        <div class="footer-social">
+          <a href="https://github.com/ashis4" target="_blank" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ashish-gaikar-b4713a289/" target="_blank" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Product</h5><ul><li><a href="#">Career Predictor</a></li><li><a href="#">Skill Assessment</a></li><li><a href="#">Roadmap Builder</a></li><li><a href="#">Salary Insights</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="#">Blog</a></li><li><a href="#">Career Guides</a></li><li><a href="#">Documentation</a></li><li><a href="#">Community</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="#">About Us</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="mailto:ashishgaikar2006@gmail.com">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 CareerAI. Built with ♥ by Ashish Gaikar.</span>
+      <span>Made in <a href="#">India 🇮🇳</a></span>
+    </div>
+  </div>
+</footer>
 
-    function showStep1() {
-      document.getElementById('step-select').style.display = 'block';
-      document.getElementById('step-roadmap').style.display = 'none';
-    }
 
-    function switchTab(name, btn) {
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.modal-tab').forEach(b => b.classList.remove('active'));
-      document.getElementById('tab-' + name).classList.add('active');
-      btn.classList.add('active');
-    }
+<!-- ═══════════════════════════════════════
+     FULLSCREEN RESULT PANEL
+═══════════════════════════════════════ -->
+<div id="result-panel" class="result-panel" style="display:none;">
 
-    /* ── Open roadmap for a chosen role ── */
-    function openRoadmap(role, roadmapText, userSkills) {
-      document.getElementById('step-select').style.display = 'none';
-      document.getElementById('step-roadmap').style.display = 'block';
-      document.getElementById('result-career').textContent = role;
+  <!-- Left sidebar -->
+  <div class="rp-sidebar">
+    <div class="rp-sidebar-header">
+      <button class="rp-back-home" onclick="closePanel()">← Back to Home</button>
+      <div class="rp-sidebar-title">Your AI Matches</div>
+      <div class="rp-sidebar-sub" id="rp-skills-label"></div>
+    </div>
+    <div id="rp-cards"></div>
+    <div class="rp-sidebar-footer">
+      <div class="rp-footer-label">Powered by</div>
+      <div class="rp-footer-tech">Keras · NLP · Flask</div>
+    </div>
+  </div>
 
-      /* Reset tabs */
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.modal-tab').forEach(b => b.classList.remove('active'));
-      document.getElementById('tab-roadmap').classList.add('active');
-      document.querySelector('.modal-tab').classList.add('active');
+  <!-- Right content -->
+  <div class="rp-content">
 
-      /* ── Roadmap steps ── */
-      const stepsEl = document.getElementById('roadmap-steps');
-      stepsEl.innerHTML = '';
-      const steps = roadmapText.trim().split(/\n(?=\d+\.)/).filter(Boolean);
-      steps.forEach((raw, i) => {
-        const lines = raw.trim().split('\n');
-        const titleLine = lines[0] || '';
-        const desc = lines.slice(1).join(' ').trim();
-        const title = titleLine.replace(/^\d+\.\s*/, '').trim();
-        stepsEl.innerHTML += `
-          <div class="roadmap-step">
-            <div class="step-circle">${i + 1}</div>
-            <div class="step-body">
-              <div class="step-title">${title}</div>
-              <div class="step-desc">${desc || 'Develop expertise in this area to advance your career.'}</div>
-            </div>
-          </div>`;
+    <div id="rp-default" class="rp-default">
+      <div class="rp-default-icon">🎯</div>
+      <div class="rp-default-title">Select a career</div>
+      <div class="rp-default-sub">Click any career card on the left to explore your full roadmap, skill gap analysis, top job roles, and salary breakdown.</div>
+    </div>
+
+    <div id="rp-detail" style="display:none;">
+      <div class="rp-detail-header">
+        <div>
+          <div class="rp-detail-eyebrow">Your Career Path</div>
+          <div class="rp-detail-title" id="rp-career-name">—</div>
+        </div>
+        <div class="rp-score-badge" id="rp-score-badge">—</div>
+      </div>
+
+      <div class="rp-tabs">
+        <button class="rp-tab active" onclick="rpTab('roadmap',this)">🗺 Roadmap</button>
+        <button class="rp-tab" onclick="rpTab('skills',this)">🎯 Skills Gap</button>
+        <button class="rp-tab" onclick="rpTab('jobs',this)">💼 Job Roles</button>
+        <button class="rp-tab" onclick="rpTab('salary',this)">💰 Salary</button>
+      </div>
+
+      <div id="rp-tab-roadmap" class="rp-tab-panel active">
+        <div id="rp-roadmap-steps"></div>
+      </div>
+      <div id="rp-tab-skills" class="rp-tab-panel">
+        <div class="rp-skills-section">
+          <div class="rp-skills-label">✅ Skills you already have</div>
+          <div class="rp-chip-row" id="rp-skills-have"></div>
+        </div>
+        <div class="rp-skills-section" style="margin-top:28px">
+          <div class="rp-skills-label">❌ Skills to learn next</div>
+          <div class="rp-chip-row" id="rp-skills-miss"></div>
+        </div>
+      </div>
+      <div id="rp-tab-jobs" class="rp-tab-panel">
+        <div id="rp-jobs-list" class="rp-jobs-list"></div>
+      </div>
+      <div id="rp-tab-salary" class="rp-tab-panel">
+        <div id="rp-salary-grid" class="rp-salary-grid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+const CAREER_DATA={
+  "Data Scientist":{skills:["python","machine learning","statistics","pandas","numpy","scikit-learn","deep learning","sql","matplotlib","tensorflow"],jobs:[{icon:"🤖",name:"Data Scientist",meta:"Product / Tech",tags:["Python","ML","SQL"]},{icon:"📈",name:"ML Research Intern",meta:"AI Lab",tags:["Research","PyTorch"]},{icon:"⚙️",name:"Analytics Engineer",meta:"Startup",tags:["SQL","dbt"]},{icon:"📊",name:"Quantitative Analyst",meta:"Finance",tags:["Stats","Python"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹6–10",pct:30,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹12–20",pct:60,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹22–35",pct:85,color:"#e8a838"},{level:"Lead / Principal",amount:"₹35–60",pct:100,color:"#10b981"}]},
+  "Data Analyst":{skills:["sql","excel","power bi","tableau","python","data cleaning","statistics","pivot tables","reporting","dashboard"],jobs:[{icon:"📊",name:"Data Analyst",meta:"E-commerce",tags:["SQL","Excel","Tableau"]},{icon:"📉",name:"BI Analyst",meta:"Enterprise",tags:["Power BI","SQL"]},{icon:"🚚",name:"Operations Analyst",meta:"Logistics",tags:["Excel","Reporting"]},{icon:"💡",name:"Product Analyst",meta:"SaaS",tags:["SQL","Python"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹3–6",pct:25,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹7–12",pct:55,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹13–20",pct:80,color:"#e8a838"},{level:"Lead",amount:"₹20–30",pct:100,color:"#10b981"}]},
+  "AI Engineer":{skills:["python","deep learning","nlp","tensorflow","pytorch","machine learning","transformers","api","deployment","docker"],jobs:[{icon:"🤖",name:"AI Engineer",meta:"Tech Company",tags:["Python","PyTorch","NLP"]},{icon:"💬",name:"NLP Engineer",meta:"Fintech",tags:["Transformers","BERT"]},{icon:"👁",name:"Computer Vision Eng.",meta:"Healthcare AI",tags:["CV","OpenCV"]},{icon:"⚡",name:"LLM Developer",meta:"AI Startup",tags:["LLMs","APIs"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹8–14",pct:35,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹16–28",pct:65,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹30–50",pct:90,color:"#e8a838"},{level:"Lead / Principal",amount:"₹50–90",pct:100,color:"#10b981"}]},
+  "Machine Learning Engineer":{skills:["python","ml pipeline","deployment","mlflow","scikit-learn","docker","kubernetes","feature engineering","model evaluation","api"],jobs:[{icon:"🧠",name:"ML Engineer",meta:"Tech / Unicorn",tags:["Python","MLflow"]},{icon:"⚙️",name:"MLOps Engineer",meta:"Enterprise",tags:["Kubernetes","CI/CD"]},{icon:"📦",name:"AI Platform Eng.",meta:"Cloud Co.",tags:["AWS","Python"]},{icon:"🔬",name:"Research Engineer",meta:"AI Lab",tags:["Research","PyTorch"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹8–15",pct:35,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹18–32",pct:68,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹35–55",pct:90,color:"#e8a838"},{level:"Lead / Principal",amount:"₹55–100",pct:100,color:"#10b981"}]},
+  "Software Engineer":{skills:["dsa","algorithms","oop","java","python","c++","git","system design","os","dbms"],jobs:[{icon:"💻",name:"Software Engineer",meta:"MNC / FAANG",tags:["DSA","System Design"]},{icon:"🖥",name:"Backend Engineer",meta:"Startup",tags:["Node.js","Python"]},{icon:"🌐",name:"Full Stack Dev",meta:"Product Co.",tags:["React","Node"]},{icon:"☕",name:"SDE II",meta:"Enterprise",tags:["Java","Spring"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹5–10",pct:28,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹12–22",pct:58,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹25–45",pct:85,color:"#e8a838"},{level:"Lead / Principal",amount:"₹45–80",pct:100,color:"#10b981"}]},
+  "Frontend Developer":{skills:["html","css","javascript","react","typescript","figma","responsive design","api","git","redux"],jobs:[{icon:"🎨",name:"Frontend Developer",meta:"Product Startup",tags:["React","TypeScript"]},{icon:"🖌",name:"UI Developer",meta:"Agency",tags:["HTML","CSS","JS"]},{icon:"⚛️",name:"React Developer",meta:"SaaS Co.",tags:["React","Redux"]},{icon:"🛍",name:"Web Developer",meta:"E-commerce",tags:["Next.js","Tailwind"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹3–6",pct:25,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹7–14",pct:55,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹15–25",pct:82,color:"#e8a838"},{level:"Lead",amount:"₹25–40",pct:100,color:"#10b981"}]},
+  "Backend Developer":{skills:["node.js","django","api","database","sql","python","rest","authentication","docker","postgresql"],jobs:[{icon:"🖥",name:"Backend Developer",meta:"Startup / SaaS",tags:["Node.js","Python"]},{icon:"🔌",name:"API Developer",meta:"Platform Co.",tags:["REST","GraphQL"]},{icon:"🏗",name:"Systems Engineer",meta:"Enterprise",tags:["Microservices","Docker"]},{icon:"🛡",name:"Server-side Eng.",meta:"Security Firm",tags:["Auth","Security"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹4–8",pct:28,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹10–18",pct:55,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹20–35",pct:82,color:"#e8a838"},{level:"Lead / Architect",amount:"₹35–55",pct:100,color:"#10b981"}]},
+  "Web Developer":{skills:["html","css","javascript","react","node","mern","full stack","web app","sql","git"],jobs:[{icon:"🌐",name:"Full Stack Dev",meta:"Startup",tags:["MERN","SQL"]},{icon:"🎨",name:"Web Developer",meta:"Agency",tags:["HTML","CSS","JS"]},{icon:"📱",name:"UI Developer",meta:"Product Co.",tags:["React","Figma"]},{icon:"🛒",name:"E-commerce Dev",meta:"Retail",tags:["Next.js","Shopify"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹3–7",pct:27,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹8–15",pct:55,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹16–28",pct:80,color:"#e8a838"},{level:"Lead",amount:"₹28–45",pct:100,color:"#10b981"}]},
+  "UI/UX Designer":{skills:["figma","wireframe","prototype","user research","adobe xd","sketch","design system","usability testing","typography","color theory"],jobs:[{icon:"🎨",name:"UI/UX Designer",meta:"Product Co.",tags:["Figma","Prototyping"]},{icon:"🖌",name:"Product Designer",meta:"Startup",tags:["User Research"]},{icon:"📱",name:"App Designer",meta:"Mobile Studio",tags:["Mobile","Figma"]},{icon:"🔍",name:"UX Researcher",meta:"Enterprise",tags:["Research","Testing"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹3–6",pct:25,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹7–14",pct:55,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹15–25",pct:82,color:"#e8a838"},{level:"Lead / Principal",amount:"₹25–40",pct:100,color:"#10b981"}]},
+  "Cloud Engineer":{skills:["aws","docker","kubernetes","terraform","linux","networking","devops","ci/cd","azure","google cloud"],jobs:[{icon:"☁️",name:"Cloud Engineer",meta:"Tech / FAANG",tags:["AWS","Terraform"]},{icon:"🔧",name:"DevOps Engineer",meta:"Enterprise",tags:["CI/CD","Docker"]},{icon:"🏗",name:"SRE",meta:"Unicorn",tags:["Kubernetes","SRE"]},{icon:"🛡",name:"Cloud Security Eng.",meta:"Security Co.",tags:["IAM","Security"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹6–12",pct:30,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹14–24",pct:60,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹26–45",pct:88,color:"#e8a838"},{level:"Lead / Architect",amount:"₹45–80",pct:100,color:"#10b981"}]},
+  "Cybersecurity Analyst":{skills:["security","hacking","wireshark","nmap","networking","linux","python","penetration testing","vulnerability assessment","firewalls"],jobs:[{icon:"🛡",name:"Cybersecurity Analyst",meta:"Enterprise / Govt",tags:["Security","Networking"]},{icon:"🔐",name:"Penetration Tester",meta:"Security Firm",tags:["Hacking","Python"]},{icon:"🕵️",name:"Security Researcher",meta:"Tech Co.",tags:["Research","CVE"]},{icon:"🚨",name:"SOC Analyst",meta:"MNC / Bank",tags:["SIEM","Incident Response"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹4–8",pct:28,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹10–18",pct:56,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹20–35",pct:82,color:"#e8a838"},{level:"Lead / CISO",amount:"₹35–70",pct:100,color:"#10b981"}]},
+  "Business Analyst":{skills:["business analysis","requirements","sql","excel","power bi","stakeholder management","process mapping","agile","jira","documentation"],jobs:[{icon:"📈",name:"Business Analyst",meta:"Consulting / IT",tags:["Requirements","SQL"]},{icon:"🔍",name:"Product Analyst",meta:"SaaS",tags:["Agile","Jira"]},{icon:"🏢",name:"Systems Analyst",meta:"Enterprise",tags:["Process Mapping"]},{icon:"📊",name:"Data-Driven BA",meta:"Analytics Firm",tags:["SQL","Power BI"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹4–7",pct:27,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹8–14",pct:52,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹15–25",pct:78,color:"#e8a838"},{level:"Lead / Manager",amount:"₹25–40",pct:100,color:"#10b981"}]},
+  "Digital Marketing Specialist":{skills:["seo","marketing","ads","google analytics","social media","content marketing","email marketing","ppc","facebook ads","copywriting"],jobs:[{icon:"📢",name:"Digital Marketing Mgr",meta:"Brand / Agency",tags:["SEO","Ads"]},{icon:"🔍",name:"SEO Specialist",meta:"Agency",tags:["SEO","Content"]},{icon:"📱",name:"Social Media Manager",meta:"Startup",tags:["Instagram","Strategy"]},{icon:"📧",name:"Performance Marketer",meta:"E-commerce",tags:["PPC","Email"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹3–5",pct:23,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹6–12",pct:50,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹13–22",pct:78,color:"#e8a838"},{level:"Lead / Head",amount:"₹22–40",pct:100,color:"#10b981"}]},
+  "Android Developer":{skills:["android","kotlin","java","android studio","xml","firebase","rest api","mvvm","gradle","jetpack"],jobs:[{icon:"📱",name:"Android Developer",meta:"Mobile Studio",tags:["Kotlin","Firebase"]},{icon:"🛍",name:"App Developer",meta:"E-commerce",tags:["Android","Payments"]},{icon:"🏗",name:"Mobile Engineer",meta:"Unicorn",tags:["MVVM","Jetpack"]},{icon:"🎮",name:"Game Developer",meta:"Gaming Co.",tags:["Unity","Android"]}],salary:[{level:"Junior (0–2 yrs)",amount:"₹3–7",pct:27,color:"#6c63ff"},{level:"Mid-level (2–5 yrs)",amount:"₹8–16",pct:55,color:"#a78bfa"},{level:"Senior (5–8 yrs)",amount:"₹18–30",pct:82,color:"#e8a838"},{level:"Lead / Architect",amount:"₹30–50",pct:100,color:"#10b981"}]}
+};
+
+function fillSkill(v){document.getElementById('skill-input').value=v;document.getElementById('skill-input').focus()}
+function closePanel(){document.getElementById('result-panel').style.display='none';document.body.style.overflow=''}
+function rpTab(n,btn){document.querySelectorAll('.rp-tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.rp-tab').forEach(b=>b.classList.remove('active'));document.getElementById('rp-tab-'+n).classList.add('active');btn.classList.add('active')}
+
+function openCareerDetail(role,roadmapText,userSkills,scoreStr){
+  document.querySelectorAll('.rp-card').forEach(c=>c.classList.remove('rp-card-active'));
+  document.querySelectorAll('.rp-card').forEach(c=>{if(c.dataset.role===role)c.classList.add('rp-card-active')});
+  document.getElementById('rp-default').style.display='none';
+  document.getElementById('rp-detail').style.display='block';
+  document.getElementById('rp-career-name').textContent=role;
+  document.getElementById('rp-score-badge').textContent=scoreStr+'% match';
+  document.querySelectorAll('.rp-tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.rp-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('rp-tab-roadmap').classList.add('active');
+  document.querySelectorAll('.rp-tab')[0].classList.add('active');
+
+  // Roadmap
+  const stepsEl=document.getElementById('rp-roadmap-steps');stepsEl.innerHTML='';
+  const steps=roadmapText.trim().split(/\n(?=\d+\.)/).filter(Boolean);
+  steps.forEach((raw,i)=>{
+    const lines=raw.trim().split('\n');
+    const title=lines[0].replace(/^\d+\.\s*/,'').trim();
+    const desc=lines.slice(1).join(' ').trim()||'Develop expertise in this area to advance your career.';
+    stepsEl.innerHTML+=`<div class="rp-step"><div class="rp-step-num">${i+1}</div><div class="rp-step-body"><div class="rp-step-title">${title}</div><div class="rp-step-desc">${desc}</div></div></div>`;
+  });
+
+  const data=CAREER_DATA[role];if(!data)return;
+  const userLow=userSkills.map(s=>s.toLowerCase().trim());
+  let h='',m='';
+  data.skills.forEach(sk=>{
+    if(userLow.some(u=>sk.includes(u)||u.includes(sk)))h+=`<span class="rp-chip rp-chip-have">✓ ${sk}</span>`;
+    else m+=`<span class="rp-chip rp-chip-miss">+ ${sk}</span>`;
+  });
+  document.getElementById('rp-skills-have').innerHTML=h||'<span class="rp-chip rp-chip-miss" style="opacity:.5">None matched yet</span>';
+  document.getElementById('rp-skills-miss').innerHTML=m||'<span class="rp-chip rp-chip-have">🎉 You have all key skills!</span>';
+
+  document.getElementById('rp-jobs-list').innerHTML=data.jobs.map(j=>`
+    <div class="rp-job-item">
+      <div class="rp-job-icon">${j.icon}</div>
+      <div style="flex:1">
+        <div class="rp-job-name">${j.name}</div>
+        <div class="rp-job-meta">${j.meta}</div>
+        <div class="rp-job-tags">${j.tags.map(t=>`<span class="rp-job-tag">${t}</span>`).join('')}</div>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('rp-salary-grid').innerHTML=data.salary.map(s=>`
+    <div class="rp-sal-card">
+      <div class="rp-sal-level">${s.level}</div>
+      <div class="rp-sal-amount">${s.amount}<span class="rp-sal-unit">LPA</span></div>
+      <div class="rp-sal-bar-bg"><div class="rp-sal-bar-fill" style="width:${s.pct}%;background:${s.color}"></div></div>
+    </div>`).join('');
+
+  // Scroll content to top
+  document.querySelector('.rp-content').scrollTop=0;
+}
+
+document.getElementById('predict-btn').addEventListener('click',function(){
+  const skills=document.getElementById('skill-input').value.trim();
+  if(!skills){document.getElementById('skill-input').focus();return}
+  const btn=this;btn.textContent='⏳ Analyzing...';btn.disabled=true;
+  fetch('/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({skills})})
+  .then(r=>r.json())
+  .then(data=>{
+    btn.textContent='✦ Predict Career';btn.disabled=false;
+    const top3=data.top3||[];const roadmaps=data.roadmaps||{};const userSkills=skills.split(',');
+    const colors=['#e8a838','#a78bfa','#64748b'];const rankLabels=['🥇','🥈','🥉'];
+    const cardsEl=document.getElementById('rp-cards');cardsEl.innerHTML='';
+    top3.forEach((item,i)=>{
+      const card=document.createElement('div');card.className='rp-card';card.dataset.role=item.role;
+      card.innerHTML=`
+        <div class="rp-card-rank" style="color:${colors[i]}">${rankLabels[i]}</div>
+        <div class="rp-card-body">
+          <div class="rp-card-name">${item.role}</div>
+          <div class="rp-card-bar-row">
+            <div class="rp-card-bar-bg"><div class="rp-card-bar-fill" style="width:0%;background:${colors[i]}" data-w="${item.score.toFixed(1)}"></div></div>
+            <div class="rp-card-pct" style="color:${colors[i]}">${item.score.toFixed(1)}%</div>
+          </div>
+          <div class="rp-card-tags">${(CAREER_DATA[item.role]?.skills||[]).slice(0,3).map(s=>`<span class="rp-ctag">${s}</span>`).join('')}</div>
+        </div>
+        <div class="rp-card-arrow">›</div>`;
+      card.addEventListener('click',()=>{
+        openCareerDetail(item.role,roadmaps[item.role]||'1. Build strong foundations\n2. Learn core tools\n3. Work on real projects\n4. Deploy and share',userSkills,item.score.toFixed(1));
       });
-
-      const data = CAREER_DATA[role];
-
-      /* ── Skills Gap ── */
-      const haveEl = document.getElementById('skills-have');
-      const missEl = document.getElementById('skills-miss');
-      haveEl.innerHTML = '';
-      missEl.innerHTML = '';
-      if (data) {
-        const userLow = userSkills.map(s => s.toLowerCase().trim());
-        data.skills.forEach(sk => {
-          const have = userLow.some(u => sk.includes(u) || u.includes(sk));
-          if (have) {
-            haveEl.innerHTML += `<span class="skill-chip chip-have">✓ ${sk}</span>`;
-          } else {
-            missEl.innerHTML += `<span class="skill-chip chip-miss">+ ${sk}</span>`;
-          }
-        });
-        if (!haveEl.innerHTML) haveEl.innerHTML = '<span class="skill-chip chip-miss" style="opacity:.5">None matched yet</span>';
-        if (!missEl.innerHTML) missEl.innerHTML = '<span class="skill-chip chip-have">🎉 You have all key skills!</span>';
-
-        /* ── Jobs ── */
-        const jobsEl = document.getElementById('jobs-list');
-        jobsEl.innerHTML = data.jobs.map(j => `
-          <div class="job-item">
-            <div class="job-icon">${j.icon}</div>
-            <div style="flex:1">
-              <div class="job-name">${j.name}</div>
-              <div class="job-meta">${j.meta}</div>
-              <div class="job-tags">${j.tags.map(t => `<span class="job-tag">${t}</span>`).join('')}</div>
-            </div>
-          </div>`).join('');
-
-        /* ── Salary ── */
-        const salEl = document.getElementById('salary-grid');
-        salEl.innerHTML = data.salary.map(s => `
-          <div class="salary-card">
-            <div class="sal-level">${s.level}</div>
-            <div class="sal-amount">${s.amount} <span class="sal-unit">LPA</span></div>
-            <div class="sal-bar-bg"><div class="sal-bar-fill" style="width:${s.pct}%;background:${s.color}"></div></div>
-          </div>`).join('');
-      }
-    }
-
-    /* ── Predict button ── */
-    document.getElementById('predict-btn').addEventListener('click', function () {
-      const skills = document.getElementById('skill-input').value.trim();
-      if (!skills) {
-        document.getElementById('skill-input').focus();
-        return;
-      }
-
-      const btn = this;
-      btn.textContent = '⏳ Analyzing...';
-      btn.disabled = true;
-
-      fetch('/predict', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ skills })
-      })
-      .then(r => r.json())
-      .then(data => {
-        btn.textContent = '✦ Predict Career';
-        btn.disabled = false;
-
-        const top3 = data.top3 || [];
-        const roadmaps = data.roadmaps || {};
-        const userSkills = skills.split(',');
-
-        const colors = ['#e8a838', '#a78bfa', '#64748b'];
-        const rankClass = ['r1', 'r2', 'r3'];
-
-        const container = document.getElementById('result-top3');
-        container.innerHTML = '';
-        top3.forEach((item, i) => {
-          const card = document.createElement('div');
-          card.className = `career-card rank-${i + 1}`;
-          card.innerHTML = `
-            <div class="rank-badge ${rankClass[i]}">${i + 1}</div>
-            <div class="career-info">
-              <div class="career-name">${item.role}</div>
-              <div class="career-bar-wrap">
-                <div class="career-bar-bg">
-                  <div class="career-bar-fill" style="width:0%;background:${colors[i]}" data-width="${item.score}"></div>
-                </div>
-                <div class="career-pct">${item.score.toFixed(1)}%</div>
-              </div>
-              <div class="career-tags">
-                ${(CAREER_DATA[item.role]?.skills || []).slice(0,3).map(s => `<span class="ctag">${s}</span>`).join('')}
-              </div>
-            </div>
-            <div class="career-arrow">→</div>`;
-          card.addEventListener('click', () => {
-            openRoadmap(item.role, roadmaps[item.role] || '1. Build foundations\n2. Learn core tools\n3. Practice projects\n4. Deploy & iterate', userSkills);
-          });
-          container.appendChild(card);
-        });
-
-        showStep1();
-        const modal = document.getElementById('result-modal');
-        modal.style.display = 'flex';
-
-        /* Animate bars after render */
-        setTimeout(() => {
-          document.querySelectorAll('.career-bar-fill').forEach(el => {
-            el.style.width = el.dataset.width + '%';
-          });
-        }, 80);
-      })
-      .catch(() => {
-        btn.textContent = '✦ Predict Career';
-        btn.disabled = false;
-        alert('Could not reach the server. Please try again.');
-      });
+      cardsEl.appendChild(card);
     });
+    document.getElementById('rp-skills-label').textContent='Skills: '+skills.split(',').slice(0,3).map(s=>s.trim()).join(', ')+(skills.split(',').length>3?'…':'');
+    document.getElementById('rp-default').style.display='flex';
+    document.getElementById('rp-detail').style.display='none';
+    document.getElementById('result-panel').style.display='flex';
+    document.body.style.overflow='hidden';
+    setTimeout(()=>{document.querySelectorAll('.rp-card-bar-fill').forEach(el=>{el.style.width=el.dataset.w+'%'})},80);
+    setTimeout(()=>{if(top3.length>0)openCareerDetail(top3[0].role,roadmaps[top3[0].role]||'1. Build strong foundations\n2. Learn core tools\n3. Work on real projects\n4. Deploy and share',userSkills,top3[0].score.toFixed(1))},200);
+  })
+  .catch(()=>{btn.textContent='✦ Predict Career';btn.disabled=false;alert('Could not reach the server. Please try again.')});
+});
 
-    /* Enter key triggers predict */
-    document.getElementById('skill-input').addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') document.getElementById('predict-btn').click();
-    });
-
-    /* Click outside modal to close */
-    document.getElementById('result-modal').addEventListener('click', function (e) {
-      if (e.target === this) closeModal();
-    });
-  </script>
-
+document.getElementById('skill-input').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('predict-btn').click()});
+</script>
 </body>
 </html>
